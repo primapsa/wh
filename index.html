@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.6.0/mapbox-gl.js"></script>
+    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.6.0/mapbox-gl.css" rel="stylesheet" />
+    <title>fancy-weather</title>
+</head>
+<body class="body" id="body"> 
+    <div class="wrapper" id="wrapper">
+        <header class="header">
+            <div class="controls">
+                <button class="button-update"></button>
+                <select class="select-lang" name="select-lang" id="select-lang" disabled>
+                    <option class="select-lang__point" value="EN">EN</option>
+                    <option class="select-lang__point" value="RU">RU</option>
+                    <option class="select-lang__point" value="BE">BE</option>
+                </select>
+                <div class="switcher" id="switcher">                    
+                    <label><input type="radio"  class="radio-button" id="radiobuttonc" name="radio" value="C" checked>C</label>                     
+                    <label><input type="radio" class="radio-button" id="radiobuttonf" name="radio" value="F">F</label>
+                </div>
+            </div>
+            <form class="form-search" action="#">
+                <input class="search-input" type="text" placeholder="for example 'Minsk'">
+                <input class="search-submit" type="submit" value="search">
+            </form>
+        </header>
+        <main class="main">
+            <div class="weather-data">
+                <div class="data-geo">
+                    <div class="current-place" id="currentplace"></div>
+                    <div class="current-date" id="currenttime"></div><div class="current-date current-time"></div>
+                </div>
+                <div class="data-temp">
+                    <div class="temperature" id="temperature"></div>
+                    <div class="conditions">
+                        <div class="conditions-icon"><canvas class="main-icon" width="128" height="128"></canvas></div>
+                        <span class="weather-description" id="weatherdescription"></span>
+                        <span class="weather-feels" id="weatherfeels"></span>
+                        <span class="weather-wind" id="weatherwind"></span>
+                        <span class="weather-humidity" id="humidity"></span>
+                    </div>
+                </div>  
+                <div class="data-forecast" id="dataforecast"></div>              
+            </div>
+            <div class="weather-map">
+                <div class="map" id="map"></div>
+                
+            </div>
+        </main>
+    </div> 
+    <script src="skyicons.js"></script>  
+    <script src="names.js"></script> 
+    <script src="index.js"></script> 
+</body>
+</html>

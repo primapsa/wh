@@ -1,0 +1,215 @@
+@mixin text-style($font-family,
+ $font-size, $font-weight, $line-height, $transfrom, $font-color) {
+  font-family: $font-family;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  text-transform: $transfrom;
+  color: $font-color;  
+}
+$Montserrat: "Montserrat";
+$white: #FFFFFF;
+$black: #000000;
+
+
+.body {   
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 16px;   
+}
+.wrapper {   
+    padding: 3% 7%; 
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.5);
+      
+}
+.header, .main {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;    
+}
+
+.controls {
+    width: 14.375rem;
+    display: flex;
+    justify-content: space-between
+}
+
+.button-update {
+    width: 2.75rem;
+    height: 2.75rem;
+    border: none;
+    border-radius: 3px;
+    background-image: url("assets/refresh.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+.select-lang {
+    width: 4.375rem;
+    height: 2.75rem;
+}
+.switcher {
+    width: 5.5rem;
+    height: 2.75rem;
+   
+}
+
+.form-search {
+    width: 23rem;
+    display: flex;
+}
+.search-input {  
+    flex-grow: 3;
+}
+.search-submit {    
+    flex-grow: 1;
+}
+.weather-data {
+    //width: 37.5rem;
+  //  width: 46%;
+    flex-grow: 2;
+   
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.data-geo {
+    flex-grow: 1;
+}
+.data-temp {
+  //  flex-grow: 4;
+    display: flex;
+    //justify-content: space-between;
+    flex-wrap: wrap;
+}
+.data-forecast {
+    flex-grow: 1;
+}
+.current-place {    
+    @include text-style($Montserrat, 2.75rem, bold, 3.375rem, uppercase, $white);  
+}
+.current-date {
+    @include text-style($Montserrat, 1.5rem, 600, 1.8rem, none, $white);    
+}
+
+.temperature {
+    @include text-style($Montserrat, 19.125rem, bold, 23.31rem, uppercase, $white);  
+  
+}
+.conditions {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    @include text-style($Montserrat, 1.375rem, bold, 2.31rem, uppercase, $white);
+}
+.weather-map {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    flex-direction: column;
+    
+}
+
+.map {
+ width: 100%;
+ height: 60%;
+ background-image: url("assets/map.png");
+ background-position: center center;
+ background-repeat: no-repeat;
+ border-radius: 5px;
+}
+.map-info {
+    display: flex;
+    flex-direction: column;
+}
+.latit, .longit {
+    @include text-style($Montserrat, 1.25rem, bold, 1.875rem, none, $white);  
+}
+
+.data-forecast {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.forecast-item {
+    flex-grow: 1;
+    max-width: 9rem;
+}
+
+.forecast-item__day {
+    @include text-style($Montserrat, 1.375rem, bold, 1.68rem, uppercase, $white);  
+}
+.forecast-item__wrapper {
+    display: flex;
+}
+.forecast-item__temp {
+    //flex-grow: 4;
+    
+    @include text-style($Montserrat, 5rem, bold, 6rem, uppercase, $white);  
+}
+.forecast-item__icon {
+    width: 50%;
+    background-image: url("assets/frct.png");
+    background-repeat: no-repeat;
+}
+.radio-button {
+    cursor: pointer;
+}
+
+@media (min-width: 1200px) {
+
+}
+
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .body {           
+        font-size: 14px;  
+    }
+
+}
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .body {           
+        font-size: 13px;  
+    }
+}
+
+
+@media (max-width: 767px) {
+    .body {           
+        font-size: 12px;  
+    }
+    .map {
+        height: 200px;
+    }
+
+}
+
+@media (max-width: 520px) {
+    .body {           
+        font-size: 10px;  
+    }
+    .map {
+        height: 180px;
+    }
+    .temperature {
+        font-size: 14.125rem;
+    }
+}
+@media (max-width: 480px) {
+    .body {           
+        font-size: 5px;  
+    }
+    .map {
+        height: 100px;
+    }
+    .temperature {
+        font-size: 10.125rem;
+    }
+   
+
+}
